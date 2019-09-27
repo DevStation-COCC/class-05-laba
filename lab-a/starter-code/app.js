@@ -60,7 +60,7 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
 
     var pro1 = multiply(a, b)[0];
     var pro2 = multiply(pro1, c)[0];
-   console.log([sum2, pro2, msg1, msg2]);
+   
     return [sum2, pro2, msg1, msg2];
 }
 
