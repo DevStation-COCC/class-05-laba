@@ -9,11 +9,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
+var mySum = a +b;
+var phrase ='The sum of ' + a + ' and ' + b + ' is ' + mySum +'.';
 
+return [mySum, phrase];
 }
-
+ 
 // Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -25,13 +28,19 @@ Write a function called multiply() that takes in two numbers as arguments and re
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
+
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
+var productSum = a * b;
+var message = 'The product of ' + a + ' and ' + b + ' is ' + productSum + '.';
 
+return [productSum, message];
 }
 
+
+
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -48,11 +57,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+    var sumNumber = sum(sum(4,7)[0], 5)[0];
+    var productNumber = multiply(multiply(4, 7)[0], 5)[0];
+    var thirdElement = a + ' and ' + b + ' and ' + c + ' sum to ' + sumNumber + '.';
+    var fourthElement = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + productNumber + '.';
+    
+    return [sumNumber, productNumber, thirdElement, fourthElement];
 
-}
+    }
+    
+    sumAndMultiply();
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -70,12 +87,18 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
+var sumNumber = sum(sum(testArray[0], testArray[1])[0], testArray[2])[0];
+var message = testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + sumNumber + ' is their sum.'
+
+return [sumNumber, message];
 
 }
 
+sumArray();
+
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
