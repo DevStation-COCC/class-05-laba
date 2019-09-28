@@ -53,6 +53,14 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
+
+// Holly's Whiteboard for figuring out message02 variable below 
+// - In order to add values to the message, I first want to isolate the number 4 (the first argument). How do I do this? 
+// - When I call sum() it returns an array
+// - So sum(4, 7) returns 11 and the phrase
+// - I Googled "how to return an ARGUMENT javascript" and found https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments 
+
+
 function sumAndMultiply(a, b, c) { //eslint-disable-line
     var sumNums = sum(sum(a, b)[0], c)[0];
     var prodNums = multiply(multiply(a, b)[0], c)[0]; 
@@ -105,11 +113,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+    var prodNums = multiply(multiply(testArray[0], testArray[1])[0], testArray[2])[0];
+    var message = 'The numbers ' + testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' have a product of ' + prodNums + '.';
+  
+    return [prodNums, message];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
