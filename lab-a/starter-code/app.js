@@ -9,11 +9,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
+    var mySum = a + b;
+    var phrase = 'The sum of ' + a + ' and ' + b + ' is ' + mySum + '.';
 
+    return [mySum, phrase];
 }
 
 // Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -27,11 +30,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-
+    var prodNum = a * b;
+    var message = 'The product of ' + a + ' and ' + b + ' is ' + prodNum + '.';
+    
+    return [prodNum, message];
 }
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -47,12 +53,25 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a, b, c) { //eslint-disable-line
 
+// Holly's Whiteboard for figuring out message02 variable below 
+// - In order to add values to the message, I first want to isolate the number 4 (the first argument). How do I do this? 
+// - When I call sum() it returns an array
+// - So sum(4, 7) returns 11 and the phrase
+// - I Googled "how to return an ARGUMENT javascript" and found https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments 
+
+
+function sumAndMultiply(a, b, c) { //eslint-disable-line
+    var sumNums = sum(sum(a, b)[0], c)[0];
+    var prodNums = multiply(multiply(a, b)[0], c)[0]; 
+    var message01 = arguments[0] + ' and ' + arguments[1] + ' and ' + arguments[2] + ' sum to ' + sumNums + '.';
+    var message02 = 'The product of ' + arguments[0] + ' and ' + arguments[1] + ' and ' + arguments[2] + ' is ' + prodNums + '.';
+
+    return [sumNums, prodNums, message01, message02];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -70,12 +89,15 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+    var sumNums = sum(sum(testArray[0], testArray[1])[0], testArray[2])[0];
+    var message = testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + sumNums + ' is their sum.'; 
+    
+    return [sumNums, message];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -91,11 +113,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+    var prodNums = multiply(multiply(testArray[0], testArray[1])[0], testArray[2])[0];
+    var message = 'The numbers ' + testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' have a product of ' + prodNums + '.';
+  
+    return [prodNums, message];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
