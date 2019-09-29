@@ -11,7 +11,7 @@ Test this function by hand in the console to get it working, and when you think 
 function sum(a, b) { //eslint-disable-line
   var twoSum = a + b;
   var twoSumAnswer = 'The sum of ' + a + ' and ' + b + ' is ' + twoSum + '.'
-   return [twoSum, 'The sum of 4 and 7 is 11.'];
+   return [twoSum, twoSumAnswer];
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -30,7 +30,7 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
   var numMult = a * b;
-  var numMultAnswer = 'The product of 5 and 9 is 45.';
+  var numMultAnswer = 'The product of ' + a + ' and ' + b + ' is ' + numMult + '.';
   return [numMult, numMultAnswer];
 }
 
@@ -56,8 +56,8 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
   var abc = sum(abSum[0],c);
   var abMult = multiply(a,b);
   var abcMult = multiply(abMult[0], c);
-  var sumMsg = '4 and 7 and 5 sum to 16.';
-  var multMsg = 'The product of 4 and 7 and 5 is 140.'
+  var sumMsg = a + ' and ' + b + ' and ' + c + ' sum to ' + abc[0] + '.';
+  var multMsg = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + abcMult[0] + '.';
   return [abc[0], abcMult[0], sumMsg, multMsg];
 }
 
@@ -82,7 +82,7 @@ var testArray = [2, 3, 4]; //eslint-disable-line
 function sumArray(sumArr) { //eslint-disable-line
   var sumTestArray01 = sum(testArray[0], testArray[1]);
   var sumTestArray012 = sum(sumTestArray01[0], testArray[2]);
-  var arrayMsg = '2,3,4 was passed in as an array of numbers, and 9 is their sum.'
+  var arrayMsg = sumArr[0] + ',' + sumArr[1] + ',' + sumArr[2] + ' was passed in as an array of numbers, and ' + sumTestArray012[0] + ' is their sum.'
   return [sumTestArray012[0], arrayMsg];
 }
 
@@ -106,7 +106,7 @@ Test this function by hand in the console to get it working, and when you think 
 function multiplyArray(multArr) { //eslint-disable-line
   var multFirstSecond = multiply(multArr[0],multArr[1]);
   var multAll = multiply(multFirstSecond[0], multArr[2]);
-  var multArrMsg = 'The numbers 2,3,4 have a product of 24.';
+  var multArrMsg = 'The numbers ' + multArr[0] + ',' + multArr[1] + ',' + multArr[2] + ' have a product of ' + multAll[0] + '.';
   return [multAll[0], multArrMsg];
 }
 
