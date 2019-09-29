@@ -30,9 +30,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-    var product = a * b;
-    var msg = 'The product of 5 and 9 is 45.';
-    return [product, msg];
+  var product = a * b;
+  var msg = 'The product of 5 and 9 is 45.';
+  return [product, msg];
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -117,8 +117,7 @@ function multiplyArray(multArr) { //eslint-disable-line
   multArr.forEach(element => {
     product = multiply(product, element)[0];
   });
-
-  console.log(product);
+  
   return [product, msg];
     
 }
@@ -148,10 +147,16 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+  var product = 1;
+  var msg = 'The numbers 1,2,3,4,5 have a product of 120.';
+  dynamicArray.forEach(element => {
+    product = multiply(product, element)[0];
+  });
 
+  return [product, msg];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
