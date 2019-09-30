@@ -63,7 +63,7 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
    var messageMult = 'The product of 4 and 7 and 5 is 140.'
   
 
-   return [mySum2[0], myProduct2[0], messageAdd, messageMult];
+   return [mySum2, myProduct2, messageAdd, messageMult];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
