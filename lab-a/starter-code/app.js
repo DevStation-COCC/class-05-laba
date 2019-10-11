@@ -57,8 +57,8 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-    var sumNumber = sum(sum(4,7)[0], 5)[0];
-    var productNumber = multiply(multiply(4, 7)[0], 5)[0];
+    var sumNumber = sum(sum(a,b)[0], c)[0];
+    var productNumber = multiply(multiply(a, b)[0], c)[0];
     var thirdElement = a + ' and ' + b + ' and ' + c + ' sum to ' + sumNumber + '.';
     var fourthElement = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + productNumber + '.';
     
